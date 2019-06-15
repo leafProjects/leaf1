@@ -1,6 +1,5 @@
 language: java
-jdk: oraclejdk8
-install: true
+jdk: oraclejdk11
 
 deploy:
   provider: heroku
