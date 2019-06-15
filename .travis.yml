@@ -1,12 +1,12 @@
 language: java
 jdk: oraclejdk11
 
-before_script: ./script/travis/createPullRequest.sh
+before_script: if [[ $TRAVIS_BRANCH != "master" ]]; then ./script/travis/createPullRequest.sh; fi
 
 deploy:
   provider: heroku
   api_key:
-    secure: KEY
+    secure: e2Nn2yXaYmBMq/ruotGimJZ6PH1hjFuM2e0Ft21z28G1S7CebOWVaoZCoHV7DHMf5BL7fncCfB5UrDDUIZIQIYIKYC6LBfZP17wTMCRKME8kuewlxdS+tMgGt3PQ5cfy8UU+lS/XzVTQWzWJX4fhFPcbPAO3wUeLQdSCaCDmjsmkzitE8oa2s8ocnpxVh0OY+3FBAXEmvQhPmiTVmxVOJALHU4IkmMebPRGXwKhQxgrqJsTduSlsGDh4CMFlw2bmHbMiM0qR3rtuDC3ZnUVshtTKxjraja/worzjgjsO13ghgrf9KcWmZq0ucbShiEqOWy9VXH4kj9v2zYWbhdMonHhOZ0RW5VPZjgGJrZd2mK7YziuSvBdL/tuEUDvth/cFtBuEOZibG2Lg940xqTV1AZICqflsRehVLu2AgZD8bX9hiWiDZtqkIUxCTySXdFHXZc81c9HU//sRwTzbTXTQeSZpA4B2OTTY+BEleE/4+1HauwyMtOpcyYiCai/BP59mGbLbpMGhhpUA4/O9HE3OwUf+kqNR6xLlG1BDRtKizKlHtpToJ9/54L+/tNFIj7DOPi2GSUdR9+LHH0btOi2DKo+gxSb+AMpKr8cDHr4uS4M4cz0qmD2vZTjnbK3FoJdH5PqYLHHNKT7MMk1GUC5nTqjzpsRhgoKATKvLvAbFU4Y=
   app: gymmappiamoci
   on:
     repo: leafProjects/leaf1
