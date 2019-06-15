@@ -1,6 +1,8 @@
 language: java
 jdk: oraclejdk11
 
+before_script: ./script/travis/createPullRequest.sh
+
 deploy:
   provider: heroku
   api_key:
@@ -8,3 +10,4 @@ deploy:
   app: gymmappiamoci
   on:
     repo: leafProjects/leaf1
+
