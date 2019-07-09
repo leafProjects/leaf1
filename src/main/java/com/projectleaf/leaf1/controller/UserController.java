@@ -1,6 +1,6 @@
 package com.projectleaf.leaf1.controller;
 
-import com.projectleaf.leaf1.entity.User;
+import com.projectleaf.leaf1.entity.LeafUser;
 import com.projectleaf.leaf1.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,7 +17,7 @@ public class UserController {
 
     @ResponseStatus(value = HttpStatus.CREATED)
     @PostMapping(value = "/signup")
-    public ResponseEntity createUser(@Valid @RequestBody User u) {
+    public ResponseEntity createUser(@Valid @RequestBody LeafUser u) {
         userService.createUser(u);
         return new ResponseEntity(HttpStatus.CREATED);
     }

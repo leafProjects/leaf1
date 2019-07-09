@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://theleafers:aJO0fAdgxjyf5xgp@cluster0-wb088.mongodb.net/test?retryWrites=true&w=majority
+      database: leafDB
+
+jwt:
+  secchi: enrico
+  secret: javainuse
